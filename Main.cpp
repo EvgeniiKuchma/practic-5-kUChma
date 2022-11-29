@@ -6,7 +6,8 @@
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	book* arr = new book[3]{
+	int size = 3;
+	book* arr = new book[size]{
 	{"Name_book-1","Author-1 KAne", 1700, 300, 1000},
 	{"Name_book-2","Author-2 TOlne", 1800, 400, 2000},
 	{"Name_book-3","Author-3 Vorne", 1900, 500, 3000} };
@@ -31,39 +32,49 @@ int main()
 	case 1 :
 		std::cout << "1.Вывод информации о книге: " << '\n';
 		std::cout << "Введите номер книги : \n";
+		do{
 		std::cin >> n;
+		if (n < 0 || n > 2)
+			std::cout << "Ошибка вввода\n";
+		else
 		show_book(arr, 4, n);
+		} while (n > 0 || n < 3);
+		system("pause");
 		break;
 	case 2 :
 		std::cout << "2.Имя автора книги" << '\n';
 		std::cout << "Введите номер книги : \n";
-		std::cin >> n;
-		std::cout << author_name(arr[n]) << std::endl;
+		do {
+			std::cin >> n;
+			if (n < 0 || n > 2)
+				std::cout << "Ошибка вввода\n";
+			else
+				std::cout << author_name(arr[n]) << std::endl;
+		} while (n > 0 || n < 3);
+		system("pause");
 		break;
 	case 3 :
 		std::cout << "3.Запись информации о книге в отдельный файл" << '\n';
 		std::cout << "Введите номер книги : \n";
-		std::cin >> n;
-		save_book(arr[n], path1);
+		do {
+			std::cin >> n;
+			if (n < 0 || n > 2)
+				std::cout << "Ошибка вввода\n";
+			else
+				save_book(arr[n], path1);
+		} while (n > 0 || n < 3);
 		break;
 	case 4 :
 		std::cout << "4.Добавьте свою книгу в список" << '\n';
-		add_book(arr, 3);
+		add_book(arr, size);
 		break;
 	case 5 :
 		std::cout << "5.Очистите весь список" << '\n';
 		clear_arr(arr);
 		break;
-	case 6 : break;
+	case 6 : 
+		break;
 	}
-	do{
-	std::cout << "Чтобы продолжить нажмите 1: ";
-	std::cin >> n;
-	if (n == 1)
-		system("cls");
-			else
-				std::cout << "Ошибка ввода\n";
-	}while (n != 1);
 	}while (n != 6);
 	
 	return 0;

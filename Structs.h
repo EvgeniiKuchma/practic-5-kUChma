@@ -15,5 +15,5 @@ struct book
 void show_book(book* &arr,const int length, int n);
 std::string author_name(book& B);
 void save_book(book& B, std::string path);
-void add_book(book arr[], int length);
+void add_book(book* &arr, int length);
 void clear_arr(book*& arr);
