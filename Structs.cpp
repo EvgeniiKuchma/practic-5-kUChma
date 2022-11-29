@@ -34,20 +34,30 @@ void save_book(book& B, std::string path)
 	else std::cout << "File opening error\n";
 	out.close();
 }
-void add_book(book arr[], const int size)
+void add_book(book arr[], int size)
 {
-	book* tmp = new book[size + 1]{};
+	book* tmp = new book[size++];
 	for (int i = 0; i < size; i++)
 		tmp[i] = arr[i];
 	delete[]arr;
 	arr = tmp;
+	std::cout << "Название: ";
 	getline(std::cin, arr[size].Name_book);
+	std::cout << '\n';
+	std::cout << "Имя: ";
 	getline(std::cin, arr[size].Author);
+	std::cout << '\n';
+	std::cout << "Дата: ";
 	std::cin >> arr[size].year_of_publishing;
+	std::cout << '\n';
+	std::cout << "Страницы: ";
 	std::cin >> arr[size].Number_of_pages;
+	std::cout << '\n';
+	std::cout << "Цена: ";
 	std::cin >> arr[size].price;
+	std::cout << std::endl;
 }
-void  clear_arr(book* &arr, const int length)
+void  clear_arr(book* &arr)
 {
 	delete[] arr;
 }
