@@ -32,41 +32,28 @@ int main()
 	case 1 :
 		std::cout << "1.Вывод информации о книге: " << '\n';
 		std::cout << "Введите номер книги : \n";
-		do{
-		std::cin >> n;
-		if (n < 0 || n > 2)
-			std::cout << "Ошибка вввода\n";
-		else
-		show_book(arr, 4, n);
-		} while (n > 0 || n < 3);
+		show_book(arr, size, n);
 		system("pause");
 		break;
 	case 2 :
 		std::cout << "2.Имя автора книги" << '\n';
 		std::cout << "Введите номер книги : \n";
-		do {
-			std::cin >> n;
-			if (n < 0 || n > 2)
-				std::cout << "Ошибка вввода\n";
-			else
-				std::cout << author_name(arr[n]) << std::endl;
-		} while (n > 0 || n < 3);
+		std::cin >> n;
+		std::cout << author_name(arr[n]) << std::endl;
 		system("pause");
 		break;
 	case 3 :
 		std::cout << "3.Запись информации о книге в отдельный файл" << '\n';
 		std::cout << "Введите номер книги : \n";
-		do {
-			std::cin >> n;
-			if (n < 0 || n > 2)
-				std::cout << "Ошибка вввода\n";
-			else
-				save_book(arr[n], path1);
-		} while (n > 0 || n < 3);
+		std::cin >> n;
+		save_book(arr[n], path1);
 		break;
 	case 4 :
+		int length;
 		std::cout << "4.Добавьте свою книгу в список" << '\n';
-		add_book(arr, size);
+		
+		add_book(arr,size,length);
+		system("cls");
 		break;
 	case 5 :
 		std::cout << "5.Очистите весь список" << '\n';

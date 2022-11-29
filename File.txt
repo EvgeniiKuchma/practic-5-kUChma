@@ -1,6 +1,0 @@
-Name_book-3
-Author-3 Vorne
-1900
-500
-3000
-

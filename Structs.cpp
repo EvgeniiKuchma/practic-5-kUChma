@@ -34,7 +34,7 @@ void save_book(book& B, std::string path)
 	else std::cout << "File opening error\n";
 	out.close();
 }
-void add_book(book* &arr, int size)
+void add_book(book* &arr,int size)
 {
 	book* tmp = new book[size + 1];
 	for (int i = 0; i < size; i++)
